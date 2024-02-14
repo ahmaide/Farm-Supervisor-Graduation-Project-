@@ -1,12 +1,25 @@
 # Farm Supervisor Graduation Project
-Farm Supervisor is an Android Mobile Application (alongside two micro services), that tends to help the Palestinian farmers in the agricultural work by giving plant related recommendations, warnings, as the appplication is currently limited to the Avocado plant in its current phase.
 
+Farm Supervisor is an Android mobile application, complemented by two microservices, designed to assist Palestinian farmers in their agricultural endeavors by providing plant-related recommendations and warnings. Currently, the application focuses exclusively on the avocado plant.
 
-### The Mobile Application
-The mobile application is built using Android Studio with Java programming language gradle dependancy
+![Farm Supervisor App Logo](https://github.com/ahmaide/Farm-Supervisor-Graduation-Project/assets/87603637/f7bf8f4a-4630-4120-ab55-019c86fde7c7)
 
-### The Spring Boot Authentication Application
-This service is built with Java's Spring Boot framework with maven dependancy, as this service hosts to a PostGreSQL database, as it is responsible for user data such as (lands, crops, and specilizations), it also applies authentication to the application using JWT tokens.
+## Project Applications
 
-### The Django Recommendations Service Application
-This service is built with Python's Django framework, as this service hosts a Mongo databse which contains all the plant related data (currently Avocado) for the recommendations, this application hosts the system's recommendations, warnings, information (regarding pests, diseas, caring methods, cures, and needed tools), finally the application contains all the plants relations with users locations and weather conditions.
+This project comprises three applications: the main mobile application and two microservices.
+
+### Mobile Application
+
+The mobile application is developed using Android Studio with the Java programming language and Gradle for dependency management.
+
+### Spring Boot Authentication Service
+
+This service is built with the Spring Boot framework in Java and utilizes Maven for dependency management. It connects to a PostgreSQL database and manages user data, including lands, crops, and specializations. Additionally, it handles authentication using JWT tokens.
+
+### Django Recommendations Service
+
+Developed with Python's Django framework, this service uses a MongoDB database to store plant-related data (currently focused on avocados). It provides recommendations, warnings, and information on pests, diseases, care methods, cures, and necessary tools. The service also considers the relationship between plants, user locations, and weather conditions.
+
+## Application Demo
+
+![Farm Supervisor Demo](https://drive.google.com/file/d/1JsZPz2gQ59CTVkUQ_mH3UprLsQ0vyDda/view?usp=drive_link)
