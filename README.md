@@ -26,5 +26,4 @@ Developed with Python's Django framework, this service uses a MongoDB database t
 ## Repository Additional Files
 
 - **Project Report**: A comprehensive document detailing the project's scope, development process, and outcomes.
-- **Plant Related Data CSV Files**: CSV files containing the JSON format of the MongoDB data related to plants (currently focusing on avocados).
 
