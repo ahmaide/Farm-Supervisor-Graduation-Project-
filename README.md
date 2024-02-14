@@ -21,5 +21,10 @@ This service is built with the Spring Boot framework in Java and utilizes Maven 
 Developed with Python's Django framework, this service uses a MongoDB database to store plant-related data (currently focused on avocados). It provides recommendations, warnings, and information on pests, diseases, care methods, cures, and necessary tools. The service also considers the relationship between plants, user locations, and weather conditions.
 
 ## Application Demo
+[![Farm Supervisor Demo](http://img.youtube.com/vi/BEska5wem78/0.jpg)](http://www.youtube.com/watch?v=BEska5wem78 "Farm Supervisor Demo")
 
-![Farm Supervisor Demo](https://drive.google.com/file/d/1JsZPz2gQ59CTVkUQ_mH3UprLsQ0vyDda/view?usp=drive_link)
+## Repository Additional Files
+
+- **Project Report**: A comprehensive document detailing the project's scope, development process, and outcomes.
+- **Plant Related Data CSV Files**: CSV files containing the JSON format of the MongoDB data related to plants (currently focusing on avocados).
+
