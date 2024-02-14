@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextCropName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#8FD192"
+        android:hint="اسم تعريفي للمحصول"
+        android:textSize="28dp" />
+
+    <EditText
+        android:id="@+id/editTextCropNum"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#8FD192"
+        android:hint="عدد النباتات"
+        android:inputType="number"
+        android:textSize="28dp" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#8FD192"
+        android:hint="التاريخ"
+        android:textSize="28dp" />
+
+    <Button
+        android:id="@+id/buttonCropAddition"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10sp"
+        android:text="إضافة"
+        android:textSize="28dp" />
+
+</LinearLayout>

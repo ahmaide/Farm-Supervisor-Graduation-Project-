@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextLandName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#8FD192"
+        android:hint="أسم الأرض"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/editTextLandArea"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#8FD192"
+        android:hint="المساحة"
+        android:inputType="number"
+        android:textSize="28sp" />
+
+    <EditText
+        android:id="@+id/editTextLocation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#8FD192"
+        android:hint="الموقع"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/buttonAddLand"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10sp"
+        android:text="إضافة"
+        android:textSize="28sp" />
+
+</LinearLayout>

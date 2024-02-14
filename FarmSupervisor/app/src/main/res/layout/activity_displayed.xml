@@ -1,0 +1,116 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#06240C"
+    tools:context=".Displayed">
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:background="#06240C"
+                android:foregroundGravity="left"
+                app:srcCompat="@drawable/logo_without_name" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#06240C"
+                android:gravity="center"
+                android:text="FARM SUPERVISOR"
+                android:textAlignment="gravity"
+                android:textAllCaps="false"
+                android:textColor="#C6A158"
+                android:textSize="35dp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="544dp"
+            android:layout_weight="1" >
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#06240C"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="82dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="#06240C"
+                android:contentDescription="@string/app_name"
+                android:padding="13dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/home_colored" />
+
+            <ImageButton
+                android:id="@+id/cropButton"
+                android:layout_width="83dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="#06240C"
+                android:padding="16dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/crop_colored"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/marketButton"
+                android:layout_width="82dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="#06240C"
+                android:padding="12dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/market_colored"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/notiButton"
+                android:layout_width="83dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="#06240C"
+                android:padding="21dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/notification_colored"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/AccountButton"
+                android:layout_width="82dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="#06240C"
+                android:padding="18dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/user_settings_colored"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

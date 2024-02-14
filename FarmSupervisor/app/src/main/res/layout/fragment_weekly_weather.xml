@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeatherFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="#00897B"
+            android:visibility="visible" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/main_layoutWC"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="15sp"
+            android:text="نصائح الطقس الأسبوعية"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textDirection="locale"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:background="@drawable/weather_page_background"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="162dp"
+            android:orientation="horizontal"
+            android:paddingBottom="20sp">
+
+            <TextView
+                android:id="@+id/titleWC"
+                android:layout_width="163dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:includeFontPadding="false"
+                android:paddingLeft="20sp"
+                android:paddingTop="50sp"
+                android:text="أسبوع"
+                android:textColor="#00897B"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageWC"
+                android:layout_width="209dp"
+                android:layout_height="146dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_launcher_background"
+                tools:src="@drawable/cloudy" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="28dp">
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textView99"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoText="false"
+            android:paddingRight="8dp"
+            android:paddingBottom="15sp"
+            android:text="طرق العناية بناء على حالة الطقس للأيام القادمة"
+            android:textAlignment="textEnd"
+            android:textColor="#FFFFFF"
+            android:textDirection="locale"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry"
+            android:background="@drawable/weather_page_background"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
