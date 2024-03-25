@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import io.github.pixee.security.BoundedLineReader;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -71,7 +72,7 @@ public class TillageFarmersFragment extends Fragment {
                         BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                         StringBuilder response = new StringBuilder();
                         String line;
-                        while ((line = reader.readLine()) != null) {
+                        while ((line = BoundedLineReader.readLine(reader, 5_000_000)) != null) {
                             response.append(line);
                         }
                         reader.close();

@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import io.github.pixee.security.BoundedLineReader;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
@@ -112,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                             BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                             StringBuilder response = new StringBuilder();
                             String line;
-                            while ((line = reader.readLine()) != null) {
+                            while ((line = BoundedLineReader.readLine(reader, 5_000_000)) != null) {
                                 response.append(line);
                             }
                             reader.close();
@@ -244,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
                         BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                         StringBuilder response = new StringBuilder();
                         String line;
-                        while ((line = reader.readLine()) != null) {
+                        while ((line = BoundedLineReader.readLine(reader, 5_000_000)) != null) {
                             response.append(line);
                         }
                         reader.close();
@@ -320,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
                         BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                         StringBuilder response = new StringBuilder();
                         String line;
-                        while ((line = reader.readLine()) != null) {
+                        while ((line = BoundedLineReader.readLine(reader, 5_000_000)) != null) {
                             response.append(line);
                         }
                         reader.close();

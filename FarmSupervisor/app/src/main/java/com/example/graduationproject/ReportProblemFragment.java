@@ -18,6 +18,7 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import io.github.pixee.security.BoundedLineReader;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -220,7 +221,7 @@ public class ReportProblemFragment extends Fragment {
                     String inputLine;
                     StringBuilder response = new StringBuilder();
 
-                    while ((inputLine = in.readLine()) != null) {
+                    while ((inputLine = BoundedLineReader.readLine(in, 5_000_000)) != null) {
                         response.append(inputLine);
                     }
                     in.close();
