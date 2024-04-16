@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -82,7 +84,7 @@ public class EditProfileFragment extends Fragment {
             @Override
             protected String doInBackground(Void... voids) {
                 try {
-                    URL apiUrl = new URL(url);
+                    URL apiUrl = Urls.create(url, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
                     HttpURLConnection urlConnection = (HttpURLConnection) apiUrl.openConnection();
                     urlConnection.setRequestMethod("GET");
                     urlConnection.setRequestProperty("Content-Type", "application/json");
@@ -125,7 +127,7 @@ public class EditProfileFragment extends Fragment {
             @Override
             protected String doInBackground(Void... voids) {
                 try {
-                    URL apiUrl = new URL(url);
+                    URL apiUrl = Urls.create(url, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
                     HttpURLConnection urlConnection = (HttpURLConnection) apiUrl.openConnection();
                     urlConnection.setRequestMethod("PUT");
                     urlConnection.setRequestProperty("Content-Type", "application/json");

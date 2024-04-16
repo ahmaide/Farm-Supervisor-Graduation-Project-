@@ -24,6 +24,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -163,7 +165,7 @@ public class LandCropsFragment extends Fragment {
             @Override
             protected String doInBackground(Void... voids) {
                 try {
-                    URL url = new URL(addUrl);
+                    URL url = Urls.create(addUrl, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setRequestMethod("POST");
                     urlConnection.setRequestProperty("Content-Type", "application/json");
@@ -210,7 +212,7 @@ public class LandCropsFragment extends Fragment {
             @Override
             protected String doInBackground(Void... voids) {
                 try {
-                    URL url = new URL(addUrl);
+                    URL url = Urls.create(addUrl, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setRequestMethod("GET");
                     urlConnection.setRequestProperty("Content-Type", "application/json");

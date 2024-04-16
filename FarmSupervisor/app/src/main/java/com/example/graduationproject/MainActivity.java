@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
@@ -101,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 protected String doInBackground(Void... voids) {
                     try {
-                        URL url = new URL(apiUrl);
+                        URL url = Urls.create(apiUrl, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
                         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                         urlConnection.setRequestMethod("GET");
                         urlConnection.setRequestProperty("Content-Type", "application/json");
@@ -233,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected String doInBackground(Void... voids) {
                 try {
-                    URL url = new URL(passwordCheckUrl);
+                    URL url = Urls.create(passwordCheckUrl, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setRequestMethod("GET");
                     urlConnection.setRequestProperty("Content-Type", "application/json");
@@ -303,7 +305,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected String doInBackground(Void... voids) {
                 try {
-                    URL url = new URL(tokenUrl);
+                    URL url = Urls.create(tokenUrl, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setRequestMethod("POST");
                     urlConnection.setRequestProperty("Content-Type", "application/json");

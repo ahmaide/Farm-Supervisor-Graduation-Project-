@@ -18,6 +18,8 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -208,7 +210,7 @@ public class ReportProblemFragment extends Fragment {
             try {
                 String pest = pests[0];
                 String encodedPestName = URLEncoder.encode(pest, "UTF-8");
-                URL url = new URL("http://10.0.2.2:8000/api/pestApiRead/" + pest);
+                URL url = Urls.create("http://10.0.2.2:8000/api/pestApiRead/" + pest, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
                 urlConnection.setRequestMethod("GET");

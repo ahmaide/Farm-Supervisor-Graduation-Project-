@@ -15,6 +15,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -145,7 +147,7 @@ public class SignUpFarmer extends AppCompatActivity {
                                         @Override
                                         protected String doInBackground(Void... voids) {
                                             try {
-                                                URL url = new URL("http://" + IpAddress.VALUE + ":8080/api/v1/farmer/add");
+                                                URL url = Urls.create("http://" + IpAddress.VALUE + ":8080/api/v1/farmer/add", Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
                                                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                                                 urlConnection.setRequestMethod("POST");
                                                 urlConnection.setRequestProperty("Content-Type", "application/json");
