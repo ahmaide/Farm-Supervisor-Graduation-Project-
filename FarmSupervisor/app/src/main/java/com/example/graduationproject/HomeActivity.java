@@ -159,20 +159,20 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void checkNotificationState(){
-        if(sharedPrefManager.readString("NotificationState", "0").equals("1")) {
+        if("1".equals(sharedPrefManager.readString("NotificationState", "0"))) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, weeklyWeatherFragment).commit();
             sharedPrefManager.writeString("NotificationState", "3");
 
         }
-        else if(sharedPrefManager.readString("NotificationState", "0").equals("2")){
+        else if("2".equals(sharedPrefManager.readString("NotificationState", "0"))){
             getSupportFragmentManager().beginTransaction().replace(R.id.container, pestWarningFragment).commit();
             sharedPrefManager.writeString("NotificationState", "4");
         }
-        else if(sharedPrefManager.readString("NotificationState", "0").equals("5")){
+        else if("5".equals(sharedPrefManager.readString("NotificationState", "0"))){
             getSupportFragmentManager().beginTransaction().replace(R.id.container, weeklyWeatherFragment).commit();
             sharedPrefManager.writeString("NotificationState", "7");
         }
-        else if(sharedPrefManager.readString("NotificationState", "0").equals("6")){
+        else if("6".equals(sharedPrefManager.readString("NotificationState", "0"))){
             getSupportFragmentManager().beginTransaction().replace(R.id.container, pestWarningFragment).commit();
             sharedPrefManager.writeString("NotificationState", "7");
         }

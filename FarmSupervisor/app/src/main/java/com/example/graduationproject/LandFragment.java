@@ -107,8 +107,8 @@ public class LandFragment extends Fragment {
     @SuppressLint("MissingPermission")
     public void createNotification(String title, String body) {
         Intent intent = new Intent(getActivity(), HomeActivity.class);
-        if(sharedPrefManager.readString("NotificationState", "0").equals("0") ||
-                sharedPrefManager.readString("NotificationState", "0").equals("4")) {
+        if("0".equals(sharedPrefManager.readString("NotificationState", "0")) ||
+                "4".equals(sharedPrefManager.readString("NotificationState", "0"))) {
             sharedPrefManager.writeString("NotificationState", "2");
         }
         else{
@@ -392,7 +392,7 @@ public class LandFragment extends Fragment {
 
 
     private void checkNotificationState() {
-        if (sharedPrefManager.readString("NotificationState", "0").equals("0")) {
+        if ("0".equals(sharedPrefManager.readString("NotificationState", "0"))) {
             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -402,7 +402,7 @@ public class LandFragment extends Fragment {
             }, 2000);
             sharedPrefManager.writeString("NotificationState", "4");
 
-        } else if (sharedPrefManager.readString("NotificationState", "0").equals("1")) {
+        } else if ("1".equals(sharedPrefManager.readString("NotificationState", "0"))) {
             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -411,7 +411,7 @@ public class LandFragment extends Fragment {
                 }
             }, 2000);
             sharedPrefManager.writeString("NotificationState", "7");
-        } else if (sharedPrefManager.readString("NotificationState", "3").equals("3")) {
+        } else if ("3".equals(sharedPrefManager.readString("NotificationState", "3"))) {
             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {

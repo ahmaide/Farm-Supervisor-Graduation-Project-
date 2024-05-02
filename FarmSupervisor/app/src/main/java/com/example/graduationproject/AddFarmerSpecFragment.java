@@ -66,9 +66,9 @@ public class AddFarmerSpecFragment extends Fragment {
             String addUrl = "http://" + IpAddress.VALUE + ":8080/api/v1/specialization/add";
             String type, selectedType;
             selectedType = specSpinner.getSelectedItem().toString();
-            if(selectedType.equals("الحراثة")) {
+            if("الحراثة".equals(selectedType)) {
                 type = "tillage";
-            } else if(selectedType.equals("الرشّ")) {
+            } else if("الرشّ".equals(selectedType)) {
                 type = "spraying";
             } else {
                 type = "pruning";
