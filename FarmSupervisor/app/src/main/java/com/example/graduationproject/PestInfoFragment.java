@@ -92,7 +92,7 @@ public class PestInfoFragment extends Fragment {
         tv_pestCaringMethods = view.findViewById(R.id.tv_pestCaringMethods);
         hide();
 
-        if(sharedPrefManager.readString("CropPest", "None").equals("None"))
+        if("None".equals(sharedPrefManager.readString("CropPest", "None")))
             addPest.setVisibility(View.GONE);
         else
             addPest.setVisibility(View.VISIBLE);

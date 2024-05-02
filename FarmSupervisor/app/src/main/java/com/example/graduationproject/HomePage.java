@@ -98,8 +98,8 @@ public class HomePage extends Fragment {
     @SuppressLint("MissingPermission")
     public void createNotification(String title, String body) {
         Intent intent = new Intent(getActivity(), HomeActivity.class);
-        if(sharedPrefManager.readString("NotificationState", "0").equals("0") ||
-                sharedPrefManager.readString("NotificationState", "0").equals("3")) {
+        if("0".equals(sharedPrefManager.readString("NotificationState", "0")) ||
+                "3".equals(sharedPrefManager.readString("NotificationState", "0"))) {
             sharedPrefManager.writeString("NotificationState", "1");
         }
         else{
@@ -139,7 +139,7 @@ public class HomePage extends Fragment {
     }
 
     private void checkNotificationState(){
-        if(sharedPrefManager.readString("NotificationState", "0").equals("0")) {
+        if("0".equals(sharedPrefManager.readString("NotificationState", "0"))) {
             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -150,7 +150,7 @@ public class HomePage extends Fragment {
             sharedPrefManager.writeString("NotificationState", "3");
 
         }
-        else if(sharedPrefManager.readString("NotificationState", "0").equals("2")){
+        else if("2".equals(sharedPrefManager.readString("NotificationState", "0"))){
             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -160,7 +160,7 @@ public class HomePage extends Fragment {
             }, 2000);
             sharedPrefManager.writeString("NotificationState", "7");
         }
-        else if(sharedPrefManager.readString("NotificationState", "0").equals("4")){
+        else if("4".equals(sharedPrefManager.readString("NotificationState", "0"))){
             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
